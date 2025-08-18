@@ -4,7 +4,7 @@ const Logo = () => {
       <img 
         src="/assets/images/logo-full.svg" 
         alt="Config Logo" 
-        className="w-full max-w-md"
+        className="w-1/2 max-w-md"
       />
     </div>
   )

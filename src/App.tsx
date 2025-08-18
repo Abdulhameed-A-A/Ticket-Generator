@@ -1,3 +1,4 @@
+import Layout from "./components/common/Layout"
 
 
 function App() {
@@ -7,7 +8,9 @@ function App() {
   // validateForm(fakeFile)
 
   return (
-    <div></div>
+    <Layout>
+      <div>Indomie</div>
+    </Layout>
   )
 }
 
