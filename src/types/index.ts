@@ -6,6 +6,6 @@ export interface UserData {
 }
 
 export interface TicketData extends UserData {
-  eventData: string,
+  eventDate: string,
   eventLocation: string
 }
