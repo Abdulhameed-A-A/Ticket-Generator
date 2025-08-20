@@ -9,7 +9,7 @@ interface RegistrationFormData {
   name: string;
   email: string;
   userName: string;
-  avatar: string | null;
+  avatar: File | null;
 }
 
 export default function RegistrationForm({ onSubmit }: { onSubmit: (data: UserData) => void }) {
@@ -17,7 +17,7 @@ export default function RegistrationForm({ onSubmit }: { onSubmit: (data: UserDa
     name: '',
     email: '',
     userName: '',
-    avatar:  null
+    avatar: null
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -82,8 +82,7 @@ export default function RegistrationForm({ onSubmit }: { onSubmit: (data: UserDa
 
       <button
         type="submit"
-        className="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg text-sm
-                  hover:bg-blue-700 transition md:mt-6 md:py-3 md:text-base"
+        className="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg text-sm hover:bg-blue-700 transition md:mt-6 md:py-3 md:text-base"
       >
         Generate My Ticket
       </button>

@@ -2,7 +2,7 @@ import CongratSHeader from './CongratsHeader';
 import TicketCard from './TicketCard';
 import { type UserData } from '../../types';
 
-export default function SuccessPage({ userData }: { userData: UserData }) {
+export default function TicketPage({ userData }: { userData: UserData }) {
   return (
     <div className="p-4 md:p-6">
       <CongratSHeader name={userData.name} />

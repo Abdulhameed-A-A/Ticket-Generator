@@ -1,17 +1,28 @@
-import Layout from "./components/common/Layout"
-
+// src/App.tsx
+import { useState } from 'react';
+import Layout from './components/common/Layout';
+import RegistrationForm from './components/registration/RegistrationForm';
+import TicketPage from './components/ticket/TicketPage';
+import { type UserData } from './types';
 
 function App() {
-  // const blob = new Blob(["Hello world"], { type: "text/plain" });
-  // const fakeFile = new File([blob], "hello.txt", { type: "text/plain" });
-
-  // validateForm(fakeFile)
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [userData, setUserData] = useState<UserData | null>(null);
 
   return (
     <Layout>
-      <div>Indomie</div>
+      {!isSubmitted ? (
+        <RegistrationForm 
+          onSubmit={(data) => {
+            setUserData(data);
+            setIsSubmitted(true);
+          }} 
+        />
+      ) : userData ? (
+        <TicketPage userData={userData} />
+      ) : null}
     </Layout>
-  )
+  );
 }
 
-export default App
+export default App;
